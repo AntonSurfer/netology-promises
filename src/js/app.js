@@ -1,6 +1,10 @@
-// TODO: write your code here
-import sum from './basic';
+import GameSavingLoader from './GameSavingLoader.js';
 
-console.log('worked');
-
-console.log(sum([1, 2]));
+GameSavingLoader.load().then(
+  (saving) => {
+    console.log('Сохранение загружено:', saving);
+  },
+  (error) => {
+    console.error('Ошибка при загрузке:', error);
+  },
+);
